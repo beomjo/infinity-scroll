@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="k.bs.infinityscroll.scene.postDetail.PostDetailVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".scene.postDetail.PostDetailActivity">
+
+        <TextView
+            android:id="@+id/titleHead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Title"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/title"
+            app:layout_constraintEnd_toStartOf="@id/titleAmend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleAmend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="수정하기"
+            app:layout_constraintBottom_toBottomOf="@id/titleHead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/titleHead"
+            app:layout_constraintTop_toTopOf="@id/titleHead" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:text="@{vm.title}"
+            app:layout_constraintBottom_toTopOf="@id/bodyHead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleHead"
+            tools:text="title" />
+
+
+        <TextView
+            android:id="@+id/bodyHead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Body"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/body"
+            app:layout_constraintEnd_toStartOf="@id/titleAmend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/bodyAmend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="수정하기"
+            app:layout_constraintBottom_toBottomOf="@id/bodyHead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bodyHead"
+            app:layout_constraintTop_toTopOf="@id/bodyHead" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:text="@{vm.body}"
+            app:layout_constraintBottom_toTopOf="@id/commentHead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bodyHead"
+            tools:text="body" />
+
+        <TextView
+            android:id="@+id/commentHead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Comment"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/commentRecyclerView"
+            app:layout_constraintEnd_toStartOf="@id/titleAmend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/body" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/commentRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/deletePost"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentHead" />
+
+        <TextView
+            android:id="@+id/deletePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:gravity="end"
+            android:padding="10dp"
+            android:text="글삭제하기"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,6 +1,5 @@
 package k.bs.infinityscroll.scene.postlist
 
-import k.bs.infinityscroll.PostListVm
 import k.bs.infinityscroll.R
 import k.bs.infinityscroll.base.BaseBindingActivity
 import k.bs.infinityscroll.databinding.ActivityPostListBinding

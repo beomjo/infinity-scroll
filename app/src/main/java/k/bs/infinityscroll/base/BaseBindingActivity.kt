@@ -1,14 +1,13 @@
 package k.bs.infinityscroll.base
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import k.bs.infinityscroll.BR
 
-abstract class BaseBindingActivity<V : ViewDataBinding, VM : Any> : AppCompatActivity() {
+abstract class BaseBindingActivity<V : ViewDataBinding, VM : Any> : RxActivityBase() {
     private val disposables = CompositeDisposable()
 
     abstract val resId: Int

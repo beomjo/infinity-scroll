@@ -23,7 +23,6 @@ class PostListVm : BaseViewModel() {
     }
 
     private fun load() {
-
         ApiService.jsonPlaceHolder()
             .posts()
             .map { it.map { PostItemVm(it) } }
