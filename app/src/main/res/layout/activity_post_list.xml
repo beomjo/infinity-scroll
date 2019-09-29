@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="k.bs.infinityscroll.PostListVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PostListActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adapter="@{vm.adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            bind:verticalDivider="@{@drawable/divider_horizontal_black}"
+            tools:listitem="@layout/item_post" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
