@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="k.bs.infinityscroll.PostItemVm" />
+            type="k.bs.infinityscroll.scene.postlist.PostItemVm" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

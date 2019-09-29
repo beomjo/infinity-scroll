@@ -17,7 +17,7 @@ open class BaseViewHolder<B : ViewDataBinding>(
 
     val b: B = DataBindingUtil.bind(itemView)!!
 
-    open fun onBindViewHolder(item: Any) {
+    open fun onBindViewHolder(item: Any?) {
 
         if (bindingVariableId == null)
             return

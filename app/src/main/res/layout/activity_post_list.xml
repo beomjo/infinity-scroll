@@ -9,14 +9,14 @@
 
         <variable
             name="vm"
-            type="k.bs.infinityscroll.PostListVm" />
+            type="k.bs.infinityscroll.scene.postlist.PostListVm" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PostListActivity">
+        tools:context=".scene.postlist.PostListActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

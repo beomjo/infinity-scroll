@@ -1,4 +1,4 @@
-package k.bs.infinityscroll
+package k.bs.infinityscroll.scene.postlist
 
 import k.bs.infinityscroll.model.ModelPatch
 import k.bs.infinityscroll.model.ModelPost
