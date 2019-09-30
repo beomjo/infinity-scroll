@@ -9,7 +9,7 @@ import k.bs.infinityscroll.util.putObject
 import k.bs.infinityscroll.util.startActivityForResult
 
 class PostItemVm(private var model: ModelPost, val listener: ItemDeleteListener) {
-    val id  get() = model.id
+    val id get() = model.id
     val title = ObservableField<String>(model.title)
     val body = ObservableField<String>(model.body)
 
@@ -18,10 +18,18 @@ class PostItemVm(private var model: ModelPost, val listener: ItemDeleteListener)
             .putObject(model)
             .startActivityForResult<ModelPost>(view.context)
             .subscribe({ result ->
-                if (result.postDeleted)
-                    listener.itemDelete(result)
+                setResult(result)
             }, {
 
             })
+    }
+
+    private fun setResult(result: ModelPost) {
+        model = result
+        if (model.postDeleted) {
+            listener.itemDelete(model)
+        }
+        title.set(model.title)
+        body.set(model.body)
     }
 }

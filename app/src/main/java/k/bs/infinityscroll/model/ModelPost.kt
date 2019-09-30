@@ -1,9 +1,9 @@
 package k.bs.infinityscroll.model
 
 data class ModelPost(
-    val body: String = "",
+    var body: String = "",
     val id: Int = 0,
-    val title: String = "",
+    var title: String = "",
     val userId: Int = 0,
     var postDeleted: Boolean = false
 )
