@@ -19,6 +19,7 @@ class PostDetailVm(private val contract: Contract) : BaseViewModel() {
     interface Contract {
         fun deletePost()
         fun createEditDialog(): SingleSubject<String>
+        fun showToast(message: String?)
     }
 
     val title = ObservableField<String>()
@@ -43,7 +44,7 @@ class PostDetailVm(private val contract: Contract) : BaseViewModel() {
             .subscribe({ comments ->
                 commentAdapter.insertAll(comments.map { CommentItemVm(it) })
             }, {
-
+                contract.showToast(it.message)
             })
             .addTo(compositeDisposable)
     }
@@ -54,6 +55,7 @@ class PostDetailVm(private val contract: Contract) : BaseViewModel() {
             .subscribe({ result ->
                 title.set(result.title)
             }, {
+                contract.showToast(it.message)
             })
             .addTo(compositeDisposable)
     }
@@ -65,6 +67,7 @@ class PostDetailVm(private val contract: Contract) : BaseViewModel() {
             .subscribe({ result ->
                 body.set(result.body)
             }, {
+                contract.showToast(it.message)
             })
             .addTo(compositeDisposable)
     }
@@ -102,7 +105,7 @@ class PostDetailVm(private val contract: Contract) : BaseViewModel() {
             .subscribe({
                 contract.deletePost()
             }, {
-
+                contract.showToast(it.message)
             })
             .addTo(compositeDisposable)
     }

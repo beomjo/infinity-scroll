@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import io.reactivex.subjects.SingleSubject
 import k.bs.infinityscroll.R
 import k.bs.infinityscroll.base.BaseBindingActivity
@@ -50,6 +51,10 @@ class PostDetailActivity : BaseBindingActivity<ActivityPostDetailBinding, PostDe
                 .show()
 
             return dialogSubject
+        }
+
+        override fun showToast(message: String?) {
+            Toast.makeText(this@PostDetailActivity, message ?: "", Toast.LENGTH_LONG).show()
         }
     })
 
