@@ -117,6 +117,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:gravity="end"
+            android:onClick="@{()->vm.postDeleteBtn()}"
             android:padding="10dp"
             android:text="글삭제하기"
             android:textColor="#ffffff"

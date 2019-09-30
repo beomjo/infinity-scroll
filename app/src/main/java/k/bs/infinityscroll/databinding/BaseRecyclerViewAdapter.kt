@@ -4,18 +4,19 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import k.bs.infinityscroll.scene.postlist.PostItemVm
 
 open class BaseRecyclerViewAdapter<ITEM : Any, B : ViewDataBinding>(
     @LayoutRes val layout: Int,
-    val bindingVariableId: Int? = null)
-    : RecyclerView.Adapter<BaseViewHolder<B>>() {
+    val bindingVariableId: Int? = null
+) : RecyclerView.Adapter<BaseViewHolder<B>>() {
     val items = mutableListOf<ITEM>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<B> {
         return object : BaseViewHolder<B>(
-                layout = layout,
-                parent = parent,
-                bindingVariableId = bindingVariableId
+            layout = layout,
+            parent = parent,
+            bindingVariableId = bindingVariableId
         ) {}
     }
 
@@ -55,7 +56,7 @@ open class BaseRecyclerViewAdapter<ITEM : Any, B : ViewDataBinding>(
         notifyItemRangeRemoved(0, size)
     }
 
-    fun changeToCopyItems(){
+    fun changeToCopyItems() {
         items.clear()
     }
 }
