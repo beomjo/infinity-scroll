@@ -41,16 +41,13 @@ object RetrofitAdapter {
             .addConverterFactory(GsonConverterFactory.create(GsonHelper.gson()))
             .build()
 
-    private fun createClient(): OkHttpClient = createHttpClientBuilder().build()
-
-    private fun createHttpClientBuilder(): OkHttpClient.Builder {
-        return OkHttpClient.Builder()
-            .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
-            .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
-            .readTimeout(TIMEOUT, TimeUnit.SECONDS)
-            .cookieJar(JavaNetCookieJar(cookieManager()))
-            .addInterceptor(httpLoggingInterceptor())
-    }
+    private fun createClient(): OkHttpClient = OkHttpClient.Builder()
+        .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .cookieJar(JavaNetCookieJar(cookieManager()))
+        .addInterceptor(httpLoggingInterceptor())
+        .build()
 
     private fun cookieManager(): CookieManager {
         val cookieManager = CookieManager()
