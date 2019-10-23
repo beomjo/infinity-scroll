@@ -1,12 +1,12 @@
 # InfinityScroll  
 
-### JsonPlaceHolder API를 이용하여 무한스크롤 구현하기  
+## JsonPlaceHolder API를 이용하여 무한스크롤 구현하기  
 [무한스크롤](https://en.wiktionary.org/wiki/infinite_scroll)은 무한스크롤, 즉 유튜브나 페이스북, 트위터 등에서 스크롤이 끊임없이 이어지는 것  
 [JsonPlaceHolder](https://jsonplaceholder.typicode.com/)을 사용하여 무한스크롤 구현하기  
 
 <br/>
 
-### JsonPlaceHolder API Routes
+## JsonPlaceHolder API Routes
 All HTTP methods are supported.  
 <br/>
  
@@ -25,12 +25,12 @@ DELETE	/posts/1
 <br/>
 
 
-### Used Stack  
+## Used Stack  
 #### Retrofit, Gson, RxJava(RxKotlin,RxAndroid)
 
 <br/>
 
-### Example  
+## Example  
 RecyclerView와 ScrollListener를 이용하여 최하단 도달시 Data Load
 ```
 class InfinityRecyclerViewAdapter<ITEM : Any, B : ViewDataBinding>(
@@ -88,7 +88,7 @@ class InfinityRecyclerViewAdapter<ITEM : Any, B : ViewDataBinding>(
 
 <br/>
 
-### Image  
+## Image  
 #### InfinityScrollPage  
 <img src="https://user-images.githubusercontent.com/39984656/67356898-bc9fce80-f596-11e9-8bec-cc812a9f56af.png" width="300" height="450">  
 
