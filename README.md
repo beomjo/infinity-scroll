@@ -5,19 +5,30 @@
 [JsonPlaceHolder](https://jsonplaceholder.typicode.com/)을 사용하여 무한스크롤 구현하기  
 
 <br/>
+
+### JsonPlaceHolder API Routes
+All HTTP methods are supported.  
 <br/>
+ 
+GET	/posts  
+GET	/posts/1  
+GET	/posts/1/comments  
+GET	/comments?postId=1  
+GET	/posts?userId=1  
+POST	/posts  
+PUT	/posts/1  
+PATCH	/posts/1  
+DELETE	/posts/1  
+
+
+<br/>
+<br/>
+
 
 ### Used Stack  
 #### Retrofit, Gson, RxJava(RxKotlin,RxAndroid)
 
-### Image  
-#### InfinityScrollPage
-<img src="https://user-images.githubusercontent.com/39984656/67356699-f91efa80-f595-11e9-98bc-618583f9637c.png)
-" width="300" height="450">  
-#### DetailPage  
-<img src="https://user-images.githubusercontent.com/39984656/67356367-ebb54080-f594-11e9-849c-e9c30da3ffef.png)
-" width="300" height="450">  
-
+<br/>
 
 ### Example  
 RecyclerView와 ScrollListener를 이용하여 최하단 도달시 Data Load
@@ -74,4 +85,13 @@ class InfinityRecyclerViewAdapter<ITEM : Any, B : ViewDataBinding>(
     }
 }
 ```
+
+<br/>
+
+### Image  
+#### InfinityScrollPage  
+<img src="https://user-images.githubusercontent.com/39984656/67356898-bc9fce80-f596-11e9-8bec-cc812a9f56af.png" width="300" height="450">  
+
+#### DetailPage  
+<img src="https://user-images.githubusercontent.com/39984656/67357015-f2dd4e00-f596-11e9-80d8-98f62829c3ad.png" width="300" height="450">
 
